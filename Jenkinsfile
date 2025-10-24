@@ -8,8 +8,7 @@ pipeline {
     parameters {
         string(name: 'BRANCH_NAME', defaultValue: 'main')
         string(name: 'BUILD_ENV', defaultValue: 'dev')
-         string(name: 'STUDENT_NAME', defaultValue: 'Tanees Fatima')
-
+        string(name: 'STUDENT_NAME', defaultValue: 'Tanees Fatima')
     }
 
     environment {
@@ -36,7 +35,7 @@ pipeline {
             }
             steps {
                 echo 'Running unit tests with Jest...'
-                bat "npm test"
+                sh "npm test"
             }
         }
 
@@ -50,7 +49,6 @@ pipeline {
     post {
         always {
             echo 'Cleaning up workspace...'
-            // deleteDir()
         }
         success {
             echo 'Pipeline executed successfully.'
