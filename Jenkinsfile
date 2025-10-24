@@ -35,7 +35,7 @@ pipeline {
             }
             steps {
                 echo 'Running unit tests with Jest...'
-                sh "npm test"
+                sh "npx jest"
             }
         }
 
