@@ -8,7 +8,8 @@ pipeline {
     parameters {
         string(name: 'BRANCH_NAME', defaultValue: 'main')
         string(name: 'BUILD_ENV', defaultValue: 'dev')
-        string(name: 'STUDENT_NAME', defaultValue: 'Tanees Fatima') 
+         string(name: 'STUDENT_NAME', defaultValue: 'Tanees Fatima')
+
     }
 
     environment {
@@ -19,7 +20,7 @@ pipeline {
         stage('Install Dependencies') {
             steps {
                 echo "Installing Node.js dependencies..."
-                sh "npm install"
+                bat "npm install"
             }
         }
 
@@ -35,7 +36,7 @@ pipeline {
             }
             steps {
                 echo 'Running unit tests with Jest...'
-                sh "npx jest"
+                bat "npm test"
             }
         }
 
