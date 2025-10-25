@@ -20,3 +20,12 @@ test('divides two numbers', () => {
 test('throws error when dividing by zero', () => {
   expect(() => calc.divide(5, 0)).toThrow('Cannot divide by zero');
 });
+
+test('modulus of two numbers', () => {
+    expect(calc.modulus(10, 3)).toBe(1);
+    expect(calc.modulus(10, 5)).toBe(0);
+});
+
+test('modulus by zero throws error', () => {
+    expect(() => calc.modulus(10, 0)).toThrow("Cannot divide by zero");
+});
